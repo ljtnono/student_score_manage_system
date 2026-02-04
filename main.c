@@ -44,6 +44,13 @@ void save_record(Node* head);
 void display_record(Node* head);
 void load_record(Node** head);
 
+// 使用SQLite驱动实现的函数
+void add(struct Student student);
+void delete(struct Student student);
+void modify(struct Student student);
+struct Student search(char* name);
+
+
 /**
  * 打印菜单
  */
@@ -86,7 +93,6 @@ void input_record(Node** head) {
     while(tail && tail->next) {
         tail = tail->next;
     }
-
     do {
         p = (Node*)malloc(sizeof(Node));
         if (!p) {
